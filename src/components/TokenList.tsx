@@ -3,7 +3,7 @@ import { Token } from "./Container"
 const TokenList = ({tokens} : {tokens: Token[]}) => {
     return (
       <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold mb-4">Your Tokens</h2>
+        <h2 className="text-2xl font-bold mb-4">Tokens History</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
