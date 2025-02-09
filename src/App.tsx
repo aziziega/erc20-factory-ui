@@ -5,7 +5,7 @@ import {
   getDefaultConfig,
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
-import { WagmiProvider } from 'wagmi';
+import { useReadContract, WagmiProvider } from 'wagmi';
 import {
   mantaSepoliaTestnet
 } from 'wagmi/chains';
@@ -14,7 +14,10 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
-import TokenForm from './components/TokenForm';
+import TokenForm from './components/Container';
+import TokenList from './components/TokenList';
+import { ERC20_FACTORY_ABI_JSON, ERC20_FACTORY_CONTRACT } from './constants';
+import Container from './components/Container';
 
 
 export const config = getDefaultConfig({
@@ -24,20 +27,23 @@ export const config = getDefaultConfig({
   ssr: true,
 });
 
+
+export type Tokens = {
+  name: string;
+  symbol: string;
+  supply: number;
+  address: `0x${string}`
+}
+
 function App() {
   const queryClient = new QueryClient();
-
   return (
     <WagmiProvider config={config}>
     <QueryClientProvider client={queryClient}>
       <RainbowKitProvider>
         <div className="min-h-screen bg-gray-900 text-white">
           <Header />
-          <main className="container mx-auto px-4 md:px-8 lg:px-20 xl:px-60 py-8">
-            <h1 className="text-4xl font-bold mb-8 text-center">ERC20 Token Factory</h1>
-            <TokenForm />
-            {/* <TokenList /> */}
-          </main>
+          <Container />
           <Toaster position="top-center" />
         </div>
         
