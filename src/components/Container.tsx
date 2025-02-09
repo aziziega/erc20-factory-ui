@@ -87,6 +87,18 @@ const Container = () => {
 
   async function handleAddToken(e: React.FormEvent, tokenName:string , tokenSymbol:string, tokenSupply:string) {
     e.preventDefault()
+    if(tokenName.length == 0 || tokenSymbol.length == 0 || tokenSupply.length == 0){
+      toast.dismiss();
+      toast.error("Please fill the form", {
+        style: {
+          background: "#2B2F36",
+          color: "#fff",
+        },
+      });
+      return   
+    }
+
+
     toast.loading("Submitting Form...", {
       style: {
         background: "#2B2F36",

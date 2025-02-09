@@ -27,7 +27,6 @@ const TokenForm = ({handleAddToken}: {handleAddToken: (e: React.FormEvent, token
             value={tokenName}
             onChange={(e) => setTokenName(e.target.value)}
             className="w-full px-3 py-2 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
           />
         </div>
         <div className="mb-4">
@@ -40,7 +39,6 @@ const TokenForm = ({handleAddToken}: {handleAddToken: (e: React.FormEvent, token
             value={tokenSymbol}
             onChange={(e) => setTokenSymbol(e.target.value)}
             className="w-full px-3 py-2 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
           />
         </div>
         <div className="mb-4">
@@ -53,10 +51,9 @@ const TokenForm = ({handleAddToken}: {handleAddToken: (e: React.FormEvent, token
             value={tokenSupply}
             onChange={(e) => setTokenSupply(e.target.value)}
             className="w-full px-3 py-2 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
           />
         </div>
-        <button type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+        <button type="submit" className="w-full cursor-pointer bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
           Create Token
         </button>
       </form>

@@ -5,7 +5,7 @@ import {
   getDefaultConfig,
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
-import { useReadContract, WagmiProvider } from 'wagmi';
+import { WagmiProvider } from 'wagmi';
 import {
   mantaSepoliaTestnet
 } from 'wagmi/chains';
@@ -14,9 +14,6 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
-import TokenForm from './components/Container';
-import TokenList from './components/TokenList';
-import { ERC20_FACTORY_ABI_JSON, ERC20_FACTORY_CONTRACT } from './constants';
 import Container from './components/Container';
 
 
@@ -28,12 +25,7 @@ export const config = getDefaultConfig({
 });
 
 
-export type Tokens = {
-  name: string;
-  symbol: string;
-  supply: number;
-  address: `0x${string}`
-}
+
 
 function App() {
   const queryClient = new QueryClient();
@@ -41,12 +33,11 @@ function App() {
     <WagmiProvider config={config}>
     <QueryClientProvider client={queryClient}>
       <RainbowKitProvider>
-        <div className="min-h-screen bg-gray-900 text-white">
+        <div className="h-screen bg-gray-900 text-white">
           <Header />
           <Container />
-          <Toaster position="top-center" />
         </div>
-        
+        <Toaster position="top-center" />
       </RainbowKitProvider>
     </QueryClientProvider>
     </WagmiProvider>
