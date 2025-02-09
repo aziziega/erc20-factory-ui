@@ -31,6 +31,11 @@ function App() {
       <RainbowKitProvider>
         <div className="min-h-screen bg-gray-900 text-white">
           <Header />
+          <main className="container mx-auto px-4 py-8">
+            <h1 className="text-4xl font-bold mb-8 text-center">ERC20 Token Factory</h1>
+            <TokenForm />
+            {/* <TokenList /> */}
+          </main>
         </div>
       </RainbowKitProvider>
     </QueryClientProvider>
