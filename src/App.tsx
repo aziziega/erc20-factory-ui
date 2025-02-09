@@ -13,9 +13,11 @@ import {
   QueryClientProvider,
   QueryClient,
 } from "@tanstack/react-query";
+import { Toaster } from "react-hot-toast";
+import TokenForm from './components/TokenForm';
 
 
-const config = getDefaultConfig({
+export const config = getDefaultConfig({
   appName: 'ERC20 HackerHouse',
   projectId: '390826dea2221e8d907f5db368e1ef30',
   chains: [mantaSepoliaTestnet],
@@ -31,12 +33,14 @@ function App() {
       <RainbowKitProvider>
         <div className="min-h-screen bg-gray-900 text-white">
           <Header />
-          <main className="container mx-auto px-4 py-8">
+          <main className="container mx-auto px-4 md:px-8 lg:px-20 xl:px-60 py-8">
             <h1 className="text-4xl font-bold mb-8 text-center">ERC20 Token Factory</h1>
             <TokenForm />
             {/* <TokenList /> */}
           </main>
+          <Toaster position="top-center" />
         </div>
+        
       </RainbowKitProvider>
     </QueryClientProvider>
     </WagmiProvider>
