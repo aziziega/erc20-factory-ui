@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import { useMemo } from "react"
 import toast from "react-hot-toast"
 import { useAccount, useReadContract, useReadContracts, useWriteContract } from "wagmi";
 import { ERC20_FACTORY_ABI_JSON, ERC20_FACTORY_CONTRACT, ERC20_TOKEN_ABI_JSON } from "../constants";
