@@ -5,23 +5,23 @@
 			{
 				"indexed": true,
 				"internalType": "address",
-				"name": "tokenAddress",
+				"name": "owner",
 				"type": "address"
 			},
 			{
 				"indexed": true,
 				"internalType": "address",
-				"name": "owner",
+				"name": "tokenAddress",
 				"type": "address"
 			},
 			{
 				"indexed": false,
 				"internalType": "uint256",
-				"name": "initialSupply",
+				"name": "totalSupply",
 				"type": "uint256"
 			}
 		],
-		"name": "TokenCreated",
+		"name": "createTokenEvent",
 		"type": "event"
 	},
 	{
@@ -38,12 +38,12 @@
 			},
 			{
 				"internalType": "string",
-				"name": "name",
+				"name": "tokenName",
 				"type": "string"
 			},
 			{
 				"internalType": "string",
-				"name": "symbol",
+				"name": "tokenSymbol",
 				"type": "string"
 			}
 		],
@@ -79,7 +79,7 @@
 	},
 	{
 		"inputs": [],
-		"name": "getAllTokens",
+		"name": "getAllToken",
 		"outputs": [
 			{
 				"internalType": "address[]",
