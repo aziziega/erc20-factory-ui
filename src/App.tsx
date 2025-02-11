@@ -31,15 +31,15 @@ function App() {
   const queryClient = new QueryClient();
   return (
     <WagmiProvider config={config}>
-    <QueryClientProvider client={queryClient}>
-      <RainbowKitProvider>
-        <div className="h-screen bg-gray-900 text-white">
-          <Header />
-          <Container />
-        </div>
-        <Toaster position="top-center" />
-      </RainbowKitProvider>
-    </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <RainbowKitProvider>
+          <div className="h-screen bg-gray-900 text-white">
+            <Header />
+            <Container />
+          </div>
+          <Toaster position="top-center" />
+        </RainbowKitProvider>
+      </QueryClientProvider>
     </WagmiProvider>
   )
 }
